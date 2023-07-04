@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BMI Checker</title>
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="py-3 text-center shadow">
+      <h1 class="fw-bold mb-0">
+        BMI&nbsp;<i class="bi bi-clipboard2-plus-fill"></i>
+        Checker
+      </h1>
+    </header>
+
+    <!-- main -->
+    <main class="container mt-5" style="max-width: 350px">
+      <!-- Button trigger modal -->
+      <i
+        class="bi bi-heart-pulse d-flex justify-content-center mb-4"
+        style="font-size: 14rem"
+        data-bs-toggle="modal"
+        data-bs-target="#descModal"
+      ></i>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="descModal"
+        tabindex="-1"
+        aria-labelledby="descModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="descModalLabel">BMIとは</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                BMIは肥満度を示す数値として国際的に使われており、日本の基準では25以上が肥満に分類されます。
+                BMI25を超えると生活習慣病のリスクが上がるとされているため、数値が高い方は注意が必要です。
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                閉じる
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-group col">
+          <input
+            type="number"
+            class="form-control fs-5"
+            id="input_height"
+            placeholder="身長"
+            aria-label="to-do"
+            aria-describedby="button-addon"
+          />
+          <label class="input-group-text">cm</label>
+        </div>
+        <div class="input-group col">
+          <input
+            type="number"
+            class="form-control fs-5"
+            id="input_weight"
+            placeholder="体重"
+            aria-label="to-do"
+            aria-describedby="button-addon"
+          />
+          <label class="input-group-text">kg</label>
+        </div>
+      </div>
+      <div class="d-grid my-3 gap-3">
+        <button type="button" class="btn-judge btn btn-lg btn-secondary fs-3">
+          判定
+        </button>
+        <div class="card text-center">
+          <div class="card-header fs-5 fw-bold">あなたのBMIは</div>
+          <div class="card-body fs-4 fw-bold" id="js_bmi">?</div>
+        </div>
+        <div class="card text-center">
+          <div class="card-header fs-5 fw-bold">判定</div>
+          <div class="card-body fs-4 fw-bold" id="js_judge">?</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
