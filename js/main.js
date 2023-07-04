@@ -20,7 +20,7 @@ const checkBMI = function () {
   }
 };
 
-const judge = document.getElementsByClassName("btn-judge");
+const judge = document.getElementById("btn_judge");
 
 judge.addEventListener("click", () => {
   checkBMI();
